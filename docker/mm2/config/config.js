@@ -104,6 +104,16 @@ var config = {
             }
         },
         {
+            // https://github.com/bittiez/MMM-MWWordOfTheDay
+            module: "MMM-MWWordOfTheDay",
+            position: "top_right",
+            disabled: false,
+            config: {
+                header: "Word Of The Day",
+                updateInterval: 60 * 60 * 24 * 1000 // one a day
+            }
+        },
+        {
             module: "newsfeed",
             position: "bottom_bar",
             disabled: false,
