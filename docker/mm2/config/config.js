@@ -44,6 +44,28 @@ var config = {
             }
         },
         {
+            // https://github.com/eouia/worldclock
+            module: "worldclock",
+            position: "top_left",
+            disabled: false,
+            config: {
+                timeFormat: 'HH:mm A',
+                style: "top",
+                offsetTimezone: "America/Los_Angeles", // null for absolute offset
+                clocks: [
+                    {
+                        title: "Home",
+                        flag: "us",
+                    },
+                    {
+                        title: "India",
+                        timezone: "Asia/Kolkata",
+                        flag: "in",
+                    }
+                ]
+            }
+        },
+        {
             module: "calendar",
             header: "US Holidays",
             position: "top_left",
