@@ -4,8 +4,6 @@ Magic Mirror 2
 
 ## ToDO
 
-* [MMM-quote-of-the-day](https://github.com/Sispheor/MMM-quote-of-the-day)
-* [MMM-MWWordOfTheDay](https://github.com/bittiez/MMM-MWWordOfTheDay)
 * [MMM-ImageSlideshow](https://github.com/AdamMoses-GitHub/MMM-ImageSlideshow)
 * [MMM-GooglePhotos](https://github.com/eouia/MMM-GooglePhotos)
 * [MMM-BackgroundSlideshow](https://github.com/darickc/MMM-BackgroundSlideshow)
