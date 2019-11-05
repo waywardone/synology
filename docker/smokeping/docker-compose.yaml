@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  smokeping:
+    container_name: smokeping
+    image: linuxserver/smokeping
+    ports:
+      - 192.168.1.2:8000:80
+    environment:
+      - TZ=America/Los_Angeles
+    volumes:
+      - /volume1/docker/smokeping/config:/config:rw
+      - /volume1/docker/smokeping/data:/data:rw
+    restart: unless-stopped

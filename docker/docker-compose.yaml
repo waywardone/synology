@@ -16,6 +16,12 @@ services:
       service: homebridge
       file: homebridge/docker-compose.yaml
 
+  smokeping:
+    # Track network latency
+    extends:
+      service: smokeping
+      file: smokeping/docker-compose.yaml
+
 networks:
   home:
     driver: macvlan
