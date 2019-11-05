@@ -34,6 +34,11 @@ services:
       service: mm2
       file: mm2/docker-compose.yaml
 
+  ubooquity:
+    extends:
+      service: ubooquity
+      file: ubooquity/docker-compose.yaml
+
 networks:
   home:
     driver: macvlan

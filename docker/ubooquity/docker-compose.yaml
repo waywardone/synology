@@ -1,0 +1,19 @@
+version: '2.1'
+
+services:
+  ubooquity:
+    container_name: ubooquity
+    image: linuxserver/ubooquity:latest
+    hostname: ubooquity
+    ports:
+      - 2202:2202/tcp
+      - 2203:2203/tcp
+    environment:
+      - PUID=1024
+      - PGID=100
+      - TZ=America/Los_Angeles
+      - MAXMEM=512
+    volumes:
+      - /volume1/docker/ubooquity/config:/config:rw
+      - /volume1/library:/books:ro
+    restart: unless-stopped
