@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  homebridge:
+    container_name: homebridge
+    image: oznu/homebridge:latest
+    hostname: homebridge
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - TZ=America/Los_Angeles
+      - DSM_HOSTNAME=DiskStation
+    volumes:
+      - /volume1/docker/homebridge:/homebridge

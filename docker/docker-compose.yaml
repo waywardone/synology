@@ -10,6 +10,12 @@ services:
       home:
         ipv4_address: 192.168.1.201
 
+  homebridge:
+    # Run Homebridge to emulate iOS HomeKit API
+    extends:
+      service: homebridge
+      file: homebridge/docker-compose.yaml
+
 networks:
   home:
     driver: macvlan
