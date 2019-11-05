@@ -22,6 +22,12 @@ services:
       service: smokeping
       file: smokeping/docker-compose.yaml
 
+  simplemonitor:
+    # Network monitoring
+    extends:
+      service: simplemonitor
+      file: simplemonitor-docker/docker-compose.yaml
+
 networks:
   home:
     driver: macvlan

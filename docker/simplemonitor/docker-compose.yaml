@@ -1,0 +1,12 @@
+version: "2.1"
+services:
+  simplemonitor:
+    container_name: simplemonitor
+    build: .
+    image: simplemonitor
+    environment:
+      - HTTP_PORT=8080
+      - TZ=America/Los_Angeles
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
