@@ -28,6 +28,12 @@ services:
       service: simplemonitor
       file: simplemonitor-docker/docker-compose.yaml
 
+  mm2:
+    # Magic Mirror 2
+    extends:
+      service: mm2
+      file: mm2/docker-compose.yaml
+
 networks:
   home:
     driver: macvlan

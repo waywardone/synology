@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  mm2:
+    container_name: mm2
+    image: bastilimbach/docker-magicmirror
+    hostname: mm2
+    ports:
+      - 18080:8080/tcp
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /volume1/docker/mm2/config:/opt/magic_mirror/config:rw
+      - /volume1/docker/mm2/modules:/opt/magic_mirror/modules:rw
+    restart: unless-stopped
