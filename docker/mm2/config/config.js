@@ -28,14 +28,17 @@ var config = {
     modules: [
         {
             module: "alert",
+            disabled: false,
         },
         {
             module: "updatenotification",
             position: "top_bar"
+            disabled: false,
         },
         {
             module: "clock",
             position: "top_left",
+            disabled: false,
             config: {
                 timezone: "America/Los_Angeles"
             }
@@ -44,6 +47,7 @@ var config = {
             module: "calendar",
             header: "US Holidays",
             position: "top_left",
+            disabled: false,
             config: {
                 calendars: [
                     {
@@ -58,6 +62,7 @@ var config = {
         {
             module: "currentweather",
             position: "top_right",
+            disabled: false,
             config: {
                 location: "San Jose",
                 locationID: "5392171",  //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
@@ -67,6 +72,7 @@ var config = {
         {
             module: "weatherforecast",
             position: "top_right",
+            disabled: false,
             header: "Weather Forecast",
             config: {
                 location: "San Jose",
@@ -78,6 +84,7 @@ var config = {
         {
             module: "newsfeed",
             position: "bottom_bar",
+            disabled: false,
             config: {
                 feeds: [
                     {
@@ -98,6 +105,7 @@ var config = {
         {
             module: "MMM-JSONStatusChecker",
             position: "bottom_left",
+            disabled: false,
             header: "Garage Door",
             config: {
                 name: "opengarage_status",
@@ -111,8 +119,18 @@ var config = {
             }
         },
         {
+            module: "MMM-quote-of-the-day",
+            position: "lower_third",
+            disabled: false,
+            config: {
+                language: "en",
+                updateInterval: "30m"
+            }
+        },
+        {
             module: "MMM-Dad-Jokes",
             position: "bottom_bar",
+            disabled: false,
             config: {
                 updateInterval: 60 * 10 * 1000 // Change every 10 minutes
             }
@@ -120,6 +138,7 @@ var config = {
         {
             module: "MMM-Wallpaper",
             position: "fullscreen_below",
+            disabled: false,
             config: {
                 source: "bing",
                 slideInterval: 60 * 10 * 1000 // Change every 10 minutes
