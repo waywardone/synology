@@ -135,6 +135,7 @@ var config = {
             }
         },
         {
+            // https://github.com/shbatm/MMM-JSONStatusChecker
             module: "MMM-JSONStatusChecker",
             position: "bottom_left",
             disabled: false,
@@ -151,6 +152,7 @@ var config = {
             }
         },
         {
+            // https://github.com/Sispheor/MMM-quote-of-the-day
             module: "MMM-quote-of-the-day",
             position: "lower_third",
             disabled: false,
@@ -160,6 +162,7 @@ var config = {
             }
         },
         {
+            // https://github.com/echang15/MMM-Dad-Jokes
             module: "MMM-Dad-Jokes",
             position: "bottom_bar",
             disabled: false,
@@ -168,6 +171,7 @@ var config = {
             }
         },
         {
+            // https://github.com/kolbyjack/MMM-Wallpaper
             module: "MMM-Wallpaper",
             position: "fullscreen_below",
             disabled: false,
