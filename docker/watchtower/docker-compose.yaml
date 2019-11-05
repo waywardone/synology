@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --schedule "0 0 23 * * SUN" --cleanup
+    restart: unless-stopped

@@ -39,6 +39,12 @@ services:
       service: ubooquity
       file: ubooquity/docker-compose.yaml
 
+  watchtower:
+    # Automate Docker container image updates
+    extends:
+      service: watchtower
+      file: watchtower/docker-compose.yaml
+
 networks:
   home:
     driver: macvlan
