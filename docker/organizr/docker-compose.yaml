@@ -1,0 +1,15 @@
+version: '2.1'
+
+services:
+  organizr:
+    container_name: organizr
+    image: linuxserver/organizr
+    ports:
+      - 8888:80
+    environment:
+      - PUID=1024
+      - PGID=100
+      - TZ=America/Los_Angeles
+    volumes:
+      - /volume1/docker/organizr/config:/config
+    restart: unless-stopped

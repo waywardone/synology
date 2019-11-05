@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    user: "472"
+    ports:
+      - 3000:3000
+    environment:
+      - TZ=American/Los_Angeles
+      - PUID=1024
+      - PGID=100
+    volumes:
+      - /volume1/docker/grafana/grafana:/var/lib/grafana:rw
+    restart: unless-stopped

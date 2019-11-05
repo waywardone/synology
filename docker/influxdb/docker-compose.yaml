@@ -1,0 +1,19 @@
+version: '2.1'
+
+services:
+  influxdb:
+    container_name: influxdb
+    image: influxdb:latest
+    healthcheck:
+      test: ["CMD", "curl", "-sI", "http://127.0.0.1:8086/ping"]
+      interval: 30s
+      timeout: 1s
+      retries: 24
+    ports:
+      - 8083:8083
+      - 8086:8086
+    environment:
+      - TZ=American/Los_Angeles
+    volumes:
+      - /volume1/docker/influxdb/influxdb:/var/lib/influxdb
+    restart: unless-stopped

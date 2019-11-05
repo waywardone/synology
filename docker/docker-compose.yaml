@@ -45,6 +45,27 @@ services:
       service: watchtower
       file: watchtower/docker-compose.yaml
 
+#  grafana:
+#    # Grafana
+#    depends_on:
+#      influxdb:
+#        condition: service_healthy
+#    extends:
+#      service: grafana
+#      file: grafana/docker-compose.yaml
+
+#  influxdb:
+#    # InfluxDB
+#    extends:
+#      service: influxdb
+#      file: influxdb/docker-compose.yaml
+
+#  organizr:
+#    # Service organizer
+#    extends:
+#      service: organizr
+#      file: organizr/docker-compose.yaml
+
 networks:
   home:
     driver: macvlan
