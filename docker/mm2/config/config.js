@@ -114,7 +114,7 @@ var config = {
             module: "MMM-Dad-Jokes",
             position: "bottom_bar",
             config: {
-                updateInterval: 60000
+                updateInterval: 60 * 10 * 1000 // Change every 10 minutes
             }
         },
         {
