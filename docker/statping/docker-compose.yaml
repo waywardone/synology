@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  statping:
+    container_name: statping
+    image: hunterlong/statping
+    hostname: statping
+    environment:
+      - TZ=America/Los_Angeles
+      - DB_CONN=sqlite
+      - NAME="Statping"
+      - DESCRIPTION="State Of All The Things"
+    volumes:
+      - /volume1/docker/statping/app:/app:rw
+    ports:
+      - "8989:8080"
+    restart: unless-stopped
