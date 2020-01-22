@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+  bookstack_db:
+    container_name: bookstack_db
+    image: linuxserver/mariadb
+    hostname: bookstack_db
+    environment:
+      - TZ=America/Los_Angeles
+      - PUID=1024
+      - PGID=100
+      - MYSQL_ROOT_PASSWORD=secret!
+      - MYSQL_DATABASE=bookstack
+      - MYSQL_USER=bookstack
+      - MYSQL_PASSWORD=secret!
+    volumes:
+      - /volume1/docker/bookstack/db:/config:rw
+    restart: unless-stopped

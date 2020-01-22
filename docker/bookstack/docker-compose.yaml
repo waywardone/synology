@@ -1,0 +1,19 @@
+version: "2.1"
+services:
+  bookstack:
+    container_name: bookstack
+    image: linuxserver/bookstack
+    hostname: bookstack
+    environment:
+      - TZ=America/Los_Angeles
+      - PUID=1024
+      - PGID=100
+      - DB_HOST=bookstack_db
+      - DB_USER=bookstack
+      - DB_PASS=secret!
+      - DB_DATABASE=bookstack
+    volumes:
+      - /volume1/docker/bookstack:/config:rw
+    ports:
+      - "8990:80"
+    restart: unless-stopped

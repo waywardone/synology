@@ -51,6 +51,20 @@ services:
       service: watchtower
       file: watchtower/docker-compose.yaml
 
+  bookstack:
+    # BookStack
+    depends_on:
+        - bookstack_db
+    extends:
+      service: bookstack
+      file: bookstack/docker-compose.yaml
+
+  bookstack_db:
+    # MariaDB for BookStack
+    extends:
+      service: bookstack_db
+      file: bookstack/db/docker-compose.yaml
+
 #  grafana:
 #    # Grafana
 #    depends_on:
