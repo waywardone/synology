@@ -3,6 +3,8 @@ version: '2.1'
 services:
   pihole:
     # Network-wide ad blocking - https://pi-hole.net/
+    depends_on:
+        - unbound
     extends:
       service: pihole
       file: pihole-unbound/docker-compose.yaml
