@@ -11,7 +11,7 @@ services:
         ipv4_address: 192.168.1.5
 
   unbound:
-    # DNNSEC/DoH
+    # DNSSEC/DoH
     extends:
       service: unbound
       file: pihole-unbound/docker-compose.yaml
