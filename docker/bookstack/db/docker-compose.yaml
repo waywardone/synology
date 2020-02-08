@@ -8,10 +8,10 @@ services:
       - TZ=America/Los_Angeles
       - PUID=1024
       - PGID=100
-      - MYSQL_ROOT_PASSWORD=secret!
+      - MYSQL_ROOT_PASSWORD=update-me
       - MYSQL_DATABASE=bookstack
       - MYSQL_USER=bookstack
-      - MYSQL_PASSWORD=secret!
+      - MYSQL_PASSWORD=update-me
     volumes:
       - /volume1/docker/bookstack/db:/config:rw
     restart: unless-stopped
