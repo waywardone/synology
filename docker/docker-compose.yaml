@@ -5,10 +5,19 @@ services:
     # Network-wide ad blocking - https://pi-hole.net/
     extends:
       service: pihole
-      file: pihole/docker-compose.yaml
+      file: pihole-unbound/docker-compose.yaml
     networks:
       home:
-        ipv4_address: 192.168.1.201
+        ipv4_address: 192.168.1.5
+
+  unbound:
+    # DNNSEC/DoH
+    extends:
+      service: unbound
+      file: pihole-unbound/docker-compose.yaml
+    networks:
+      home:
+        ipv4_address: 192.168.1.6
 
   homebridge:
     # Run Homebridge to emulate iOS HomeKit API
@@ -95,5 +104,5 @@ networks:
       config:
         - subnet: "192.168.1.0/24"
           gateway: "192.168.1.1"
-          ip_range: "192.168.1.192/28"
+          ip_range: "192.168.1.5/30" # 192.168.1.5 and 192.168.1.6
 
