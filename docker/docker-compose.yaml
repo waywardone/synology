@@ -27,6 +27,12 @@ services:
       service: homebridge
       file: homebridge/docker-compose.yaml
 
+  cloudflare-ddns:
+    # Update Cloudflare DDNS
+    extends:
+      service: cloudflare-ddns
+      file: cloudflare-ddns/docker-compose.yaml
+
   smokeping:
     # Track network latency
     extends:

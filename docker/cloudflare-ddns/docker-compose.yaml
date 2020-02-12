@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  cloudflare-ddns:
+    # https://github.com/oznu/docker-cloudflare-ddns
+    container_name: cloudflare-ddns
+    image: oznu/cloudflare-ddns:latest
+    hostname: cloudflare-ddns
+    restart: always
+    environment:
+      - API_KEY=xxxxxxx
+      - ZONE=example.com
+      - SUBDOMAIN=subdomain
+      - PROXIED=false
