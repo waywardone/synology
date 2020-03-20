@@ -5,25 +5,29 @@ services:
     container_name: pihole
     image: pihole/pihole:latest
     hostname: pihole
-    domainname: update-me.com
-    mac_address: d0:ca:ab:cd:ef:01
-    cap_add:
-      - NET_ADMIN
+    domainname: TODO-update-me.com
+    mac_address: d0:ca:ab:cd:ef:05
+    # Uncomment if pihole is to be a DHCP server
+    #cap_add:
+      #- NET_ADMIN
     ports:
       - 443/tcp
       - 53/tcp
       - 53/udp
-      - 67/udp
+      # Uncomment if pihole is to be a DHCP server
+      #- 67/udp
       - 80/tcp
     environment:
-      ServerIP: 192.168.1.201
-      VIRTUAL_HOST: pihole.update-me.com
-      WEBPASSWORD: "update-me"
-      DNS1: 1.1.1.1
-      DNS2: 8.8.8.8
+      ServerIP: 192.168.1.5
+      VIRTUAL_HOST: pihole.TODO-update-me.com
+      WEBPASSWORD: "TODO-update-me"
+      # Point to unbound
+      DNS1: 192.168.1.6#53
+      DNS2: 192.168.1.6#53
+      IPv6: "no"
     volumes:
-      - /volume1/docker/pihole/volume:/etc/pihole:rw
+      - /volume1/docker/pihole/data:/etc/pihole:rw
       - /volume1/docker/pihole/config/hosts:/etc/hosts:ro
       - /volume1/docker/pihole/config/resolv.conf:/etc/resolv.conf:ro
       - /volume1/docker/pihole/config/dnsmasq.conf:/etc/dnsmasq.d/02-network.conf:ro
-    restart: unless-stopped
+    restart: always
